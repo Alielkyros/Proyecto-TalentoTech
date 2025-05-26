@@ -30,8 +30,8 @@ return (
             style={{ objectFit: 'contain' }}
             />
             <div className="card-body">
-            <h5 className="card-title">{product.title}</h5>
-            <p>${product.price}</p>
+            <h5 className="card-title text-light">{product.title}</h5>
+            <p className='text-light'>${product.price}</p>
 
             <Link
                 to={`/product/${product.id}`}
