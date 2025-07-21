@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Alert } from 'react-bootstrap';
+import { useAuth } from '../context/AuthContext'; 
 
-const Login = ({ setIsAuth }) => {
+const Login = () => {
 const [user, setUser] = useState('');
 const [pass, setPass] = useState('');
 const [error, setError] = useState('');
 const navigate = useNavigate();
+const { login } = useAuth(); 
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    if (user === 'Alielkyros' && pass === '1234') {
-    localStorage.setItem('isAuth', 'true');
-    setIsAuth(true);
+    if (user === 'Administrador' && pass === 'Admin1234') {
+    login('admin'); 
+    navigate('/');
+    } else if (user === 'Usuario' && pass === 'User1234') {
+    login('user'); 
     navigate('/');
     } else {
     setError('Usuario o contraseña incorrectos');
