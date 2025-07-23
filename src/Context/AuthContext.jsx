@@ -23,6 +23,7 @@ const logout = () => {
     setRole(null);
     localStorage.removeItem("auth");
     localStorage.removeItem("role");
+    localStorage.removeItem("cart");
 };
 
 return (

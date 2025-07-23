@@ -86,7 +86,7 @@ return (
 
       {/* Paginador */}
     {totalPages > 1 && (
-        <div className="d-flex justify-content-center mt-3">
+        <div className="d-flex justify-content-center mt-3 mb-5">
         <button className="btn btn-outline-light me-2" onClick={goPrev} disabled={currentPage === 1}>
             <FaArrowLeft /> Anterior
         </button>

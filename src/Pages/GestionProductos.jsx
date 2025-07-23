@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchProducts, createProduct, updateProduct, deleteProduct } from '../components/Product';
 import { toast, ToastContainer } from 'react-toastify';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 function GestionProductos() {
 const [products, setProducts] = useState([]);
@@ -77,7 +78,11 @@ const handleDelete = async (id) => {
 };
 
 return (
-    <div className="container mt-4">
+    <div className="container mt-4 mb-5">
+    <Helmet>
+        <title>The Super Store - Panel de Administración</title>
+        <meta name='description' content='Administra y gestiona los productos de The Super Store desde este panel de administración.'/>
+    </Helmet>
     <ToastContainer />
     <h2 className="mb-4">Gestionar Productos</h2>
 

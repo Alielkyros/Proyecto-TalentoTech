@@ -17,16 +17,17 @@ const addToCart = (product) => {
 };
 
 const removeFromCart = (index) => {
-    setCart((prev) => prev.filter((_, i) => i !== index));
+    setCart(prev => prev.filter((_, i) => i !== index));
 };
 
+const clearCart = () => {
+    setCart([]);
+};
 
 return (
-    <ContextoCarrito.Provider value={{ cart, addToCart, removeFromCart }}>
+    <ContextoCarrito.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
     {children}
     </ContextoCarrito.Provider>
-
-    
 );
 }
 

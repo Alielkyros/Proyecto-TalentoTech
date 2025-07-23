@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchProducts } from './Product';
 import { useContextoCarrito } from '../Context/ContextoCarrito';
-import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function DetalledeProducto() {
 const { id } = useParams();
@@ -14,7 +14,7 @@ const navigate = useNavigate();
 useEffect(() => {
     fetchProducts()
     .then((products) => {
-        const found = products.find((p) => p.id === parseInt(id));
+        const found = products.find((p) => String(p.id) === String(id));
         if (found) setProducto(found);
         else setError("Producto no encontrado");
     })
@@ -25,7 +25,11 @@ if (error) return <p>{error}</p>;
 if (!producto) return <p>Cargando...</p>;
 
 return (
-    <div className="card bg-secondary text-light p-4">
+    <div className="card bg-secondary text-light p-4 mb-5">
+    <Helmet>
+        <title>The Super Store - {producto.title}</title>
+        <meta name='description' content={`Detalles y características del producto ${producto.title} en The Super Store.`}/>
+    </Helmet>
     <h2>{producto.title}</h2>
     <img
         src={producto.image}
