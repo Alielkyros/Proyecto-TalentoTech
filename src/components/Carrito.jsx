@@ -1,4 +1,4 @@
-import { useContextoCarrito } from '../Context/ContextoCarrito';
+import { useContextoCarrito } from '../context/ContextoCarrito';
 import { Helmet } from 'react-helmet';
 
 function Carrito() {

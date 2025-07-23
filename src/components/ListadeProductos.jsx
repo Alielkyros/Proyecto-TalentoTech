@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from './Product';
-import { useContextoCarrito } from '../Context/ContextoCarrito';
+import { useContextoCarrito } from '../context/ContextoCarrito';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 

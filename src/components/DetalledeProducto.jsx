@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchProducts } from './Product';
-import { useContextoCarrito } from '../Context/ContextoCarrito';
+import { useContextoCarrito } from '../context/ContextoCarrito';
 import { Helmet } from 'react-helmet';
 
 function DetalledeProducto() {

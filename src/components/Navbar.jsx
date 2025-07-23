@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { FaShoppingCart } from 'react-icons/fa';
-import { useContextoCarrito } from '../Context/ContextoCarrito';
+import { useContextoCarrito } from '../context/ContextoCarrito';
 
 function Navbar() {
 const { isAuth, logout, role } = useAuth();
